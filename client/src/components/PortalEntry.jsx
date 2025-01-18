@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsArrowsFullscreen } from "react-icons/bs";
 
 const PortalEntry = () => {
@@ -9,13 +9,23 @@ const PortalEntry = () => {
   const canvasContainerRef = useRef();
 
   const handleFullScreen = () => {
-    setFullscreen(!fullscreen);
-    if (canvasContainerRef.current && fullscreen) {
-      canvasContainerRef.current.requestFullscreen();
+    if (!document.fullscreenElement) {
+      // Enter fullscreen
+      canvasContainerRef.current?.requestFullscreen();
     } else {
+      // Exit fullscreen
       document.exitFullscreen();
     }
   };
+
+  // Fullscreen change event listener
+  useEffect(() => {
+    document.addEventListener("fullscreenchange", () => {
+      if (!document.fullscreenElement) {
+        setFullscreen(!fullscreen);
+      }
+    });
+  }, [fullscreen]);
 
   return (
     <div
@@ -52,7 +62,7 @@ const PortalEntry = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#66FF66",
+          backgroundColor: "#B4D55A",
           zIndex: 100,
           borderRadius: "0.25rem",
           boxShadow: "-5px 5px 5px 5px rgba(0, 0, 0, 0.5)",
