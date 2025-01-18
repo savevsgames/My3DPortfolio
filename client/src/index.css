@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom css class for ensuring whole-page alignment without repetition */
+@layer components {
+  .alignment-class {
+    @apply mx-auto max-w-7xl px-4 sm:px-8 grid md:grid-cols-2 items-center gap-8 pt-4;
+  }
+}
+
+* {
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+/* tailwind: #0284c7 === sky-600 */
+.active {
+  color: #0284c7;
+}
+
+#projects-div {
+  grid-template-columns: 1fr;
+  min-width: 0%;
+}
+
+
