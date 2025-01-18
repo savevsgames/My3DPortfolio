@@ -3,9 +3,9 @@ import PortalEntry from "./PortalEntry";
 
 const HeroImg = () => {
   return (
-    <div className="bg-sky-100 mx-4" >
+    <div className="bg-sky-100 mx-4 my-4" >
       <div className="flex items-center justify-around">
-        <article className="border-2 border-black border-opacity-50 rounded-xl shadow-black shadow-xl">
+        <article className="my-4 border-2 border-black border-opacity-50 rounded-xl shadow-black shadow-xl">
           <PortalEntry />
         </article>
         <article className="flex items-center justify-center">

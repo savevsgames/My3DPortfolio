@@ -156,9 +156,9 @@ import {
             {/* <pointLight intensity={active ? 0.2 : 0} position={[0, 20, 0]} /> */}
             {active && (
               <Html
-                position={[-16, 60, 10]}
+                position={[-10, 60, 10]}
                 center
-                distanceFactor={30} // Adjust scale based on camera distance
+                distanceFactor={35} // Adjust scale based on camera distance
                 transform
                 rotation={[0, Math.PI, 0]}
               >
