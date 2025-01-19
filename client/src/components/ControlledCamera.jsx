@@ -25,7 +25,7 @@ const ControlledCamera = ({ cameraPosition, cameraTarget }) => {
   return (
     <CameraControls
       ref={cameraControlsRef}
-      maxPolarAngle={Math.PI * 2 / 5} // Restrict to 30 degrees above horizon
+      maxPolarAngle={(Math.PI * 2) / 5} // Restrict to 30 degrees above horizon
       // minPolarAngle={Math.PI / 6} // Prevent looking too far down
     />
   );
