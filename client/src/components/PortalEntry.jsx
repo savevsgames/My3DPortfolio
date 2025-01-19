@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
 import { useEffect, useRef, useState } from "react";
 import { BsArrowsFullscreen } from "react-icons/bs";
+import * as THREE from "three";
 
 const PortalEntry = () => {
   const [loading, setLoading] = useState(true);
@@ -80,7 +81,10 @@ const PortalEntry = () => {
           width: "100%",
           height: "100%",
         }}
-        // onClick={handleFullScreen} // Fullscreen toggle on click
+        gl={{
+          toneMapping: THREE.ACESFilmicToneMapping,
+          outputEncoding: THREE.sRGBEncoding,
+        }}
       >
         <Scene />
       </Canvas>
