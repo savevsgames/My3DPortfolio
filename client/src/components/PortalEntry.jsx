@@ -44,11 +44,13 @@ const PortalEntry = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            color: "white",
+            color: "black",
             zIndex: 10,
+            fontWeight: "bold",
+            fontSize: "2rem",
           }}
         >
-          Loading...
+          Loading my PORTALfoilio ...
         </div>
       )}
       <div
