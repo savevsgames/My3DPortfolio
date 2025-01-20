@@ -21,6 +21,7 @@ import ControlledCamera from "./ControlledCamera";
 import { useLoader } from "@react-three/fiber";
 import { RGBELoader } from "three-stdlib";
 import useCameraStore from "../Store";
+import { rotationYAngleToYaw } from "../utils/CustomUtils";
 
 const ProjectsPortal = ({ scale = 10 }) => {
   const updateCamera = useCameraStore((state) => state.updateCamera);
@@ -34,23 +35,7 @@ const ProjectsPortal = ({ scale = 10 }) => {
   const meshFloorRef = useRef();
 
   // MODELS
-  // const modelGreg = useGLTF(
-  //   "./model/gregOfficeWorkerModel/Animation_Big_Wave_Hello_withSkin.glb"
-  // );
-  // const animations = useAnimations(modelGreg.animations, modelGreg.scene);
-  // console.log(animations.actions);
-
-  // const modelGreg2 = useGLTF(
-  //   "./model/gregOfficeWorkerModel/Animation_Agree_Gesture_withSkin.glb"
-  // );
-  // const animations2 = useAnimations(modelGreg2.animations, modelGreg2.scene);
-  // console.log(animations2.actions);
-
-  // const modelGreg3 = useGLTF(
-  //   "./model/gregOfficeWorkerModel/Animation_Stand_and_Chat_withSkin.glb"
-  // );
-  // const animations3 = useAnimations(modelGreg3.animations, modelGreg3.scene);
-  // console.log(animations3.actions);
+ 
 
   // TEXTURES
   const texture = useTexture("./texture/1.png");
@@ -61,12 +46,6 @@ const ProjectsPortal = ({ scale = 10 }) => {
     radius: 30,
     scale: 4,
   };
-
-  // useEffect(() => {
-  //   animations2.actions["Armature|Agree_Gesture|baselayer"].play();
-  //   animations.actions["Armature|Big_Wave_Hello|baselayer"].play();
-  //   animations3.actions["Armature|Stand_and_Chat|baselayer"].play();
-  // }, []);
 
   useFrame((_, delta) => {
     easing.damp(
@@ -102,7 +81,7 @@ const ProjectsPortal = ({ scale = 10 }) => {
   return (
     <group
       scale={scale}
-      rotation-y={-(Math.PI * 3) / 5}
+      rotation-y={rotationYAngleToYaw(-100)}
       position={[155, 40, -90]}
     >
       <Text font="./font/bold.ttf" position={[0, 2.2, 0.1]} fontSize={0.6}>

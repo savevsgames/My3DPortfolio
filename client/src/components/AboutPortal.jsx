@@ -21,6 +21,7 @@ import ControlledCamera from "./ControlledCamera";
 import { useLoader } from "@react-three/fiber";
 import { RGBELoader } from "three-stdlib";
 import useCameraStore from "../Store";
+import { rotationYAngleToYaw } from "../utils/CustomUtils";
 
 const AboutPortal = ({ scale = 10 }) => {
   const updateCamera = useCameraStore((state) => state.updateCamera);
@@ -110,7 +111,7 @@ const AboutPortal = ({ scale = 10 }) => {
   //   : [0, -50, 0]; // Default home target
 
   return (
-    <group scale={scale} rotation-y={Math.PI} position={[0, 40, 0]}>
+    <group scale={scale} rotation-y={rotationYAngleToYaw(180)} position={[0, 40, 0]}>
       {/* <ControlledCamera
         cameraPosition={cameraPosition}
         cameraTarget={cameraTarget}        
