@@ -33,6 +33,7 @@ const AboutPortal = ({ scale = 10 }) => {
   const meshRightBackgroundRef = useRef();
   const meshLeftBackgroundRef = useRef();
   const meshFloorRef = useRef();
+  const meshCloseRef = useRef();
 
   // MODELS
   const modelGreg = useGLTF(
@@ -99,19 +100,21 @@ const AboutPortal = ({ scale = 10 }) => {
 
   const clickHandler = () => {
     setIsAboutActive(!isAboutActive);
-    updateCamera([0, 80, -160], [0, 60, 0]);
+    updateCamera([0, 80, -300], [0, 60, 0]);
   };
 
-  // const cameraPosition = active
-  //   ? [0, 80, -160] // Position when portal is active
-  //   : [0, 100, -200]; // Default home position
-
-  // const cameraTarget = active
-  //   ? [0, 60, 0] // Target when portal is active
-  //   : [0, -50, 0]; // Default home target
+  const linkClickHandler = (url) => {
+    if (isAboutActive) {
+      window.open(url, "_blank");
+    }
+  };
 
   return (
-    <group scale={scale} rotation-y={rotationYAngleToYaw(180)} position={[0, 40, 0]}>
+    <group
+      scale={scale}
+      rotation-y={rotationYAngleToYaw(180)}
+      position={[0, 40, 0]}
+    >
       {/* <ControlledCamera
         cameraPosition={cameraPosition}
         cameraTarget={cameraTarget}        
@@ -124,7 +127,7 @@ const AboutPortal = ({ scale = 10 }) => {
         <meshBasicMaterial toneMapped={false} color="white" />
       </Text>
 
-      <RoundedBox args={[4, 6, 0.1]} radius={0.1} onClick={clickHandler}>
+      <RoundedBox args={[4.5, 6, 0.1]} radius={0.1} onClick={clickHandler}>
         <MeshPortalMaterial ref={meshPortalMaterialRef}>
           <ambientLight intensity={isAboutActive ? 0.5 : 0} />
 
@@ -140,13 +143,31 @@ const AboutPortal = ({ scale = 10 }) => {
               />
             </Text>
             <mesh
+              ref={meshCloseRef}
+              position={[19, 16.25, -11.5]}
+              rotation={[0, 0, 0]}
+              visible={isAboutActive}
+              onClick={() => setIsAboutActive(!isAboutActive)}
+              onPointerOver={(e) => handleMouseOver(e.object)}
+              onPointerOut={(e) => handleMouseOut(e.object)}
+            >
+              <boxGeometry args={[3, 3, 0.5, 8, 8, 8]} />
+              <meshStandardMaterial color="#ffffff" opacity={0.5} transparent />
+            </mesh>
+            <Text
+              font="./font/bold.ttf"
+              position={[19, 16, -11]}
+              fontSize={3}
+              visible={isAboutActive}
+            >
+              X
+              <meshBasicMaterial toneMapped={false} color="#FF0000" />
+            </Text>
+            <mesh
               ref={meshFloorRef}
               position={[0, -5, 0]}
               rotation={[0, 0, 0]}
-              // visible={active}
-              // onClick={() => setActive(!active)}
-              // onPointerOver={(e) => handleMouseOver(e.object)}
-              // onPointerOut={(e) => handleMouseOut(e.object)}
+              visible={isAboutActive}
             >
               <boxGeometry args={[40, 2, 40, 8, 8, 8]} />
               <meshStandardMaterial color="#ffffff" opacity={0.2} transparent />
@@ -159,7 +180,9 @@ const AboutPortal = ({ scale = 10 }) => {
                 ref={meshInfoBackgroundRef}
                 position={[0, 0, -3.5]}
                 visible={isAboutActive}
-                onClick={() => setIsAboutActive(!isAboutActive)}
+                onClick={() =>
+                  linkClickHandler("https://github.com/savevsgames")
+                }
                 onPointerOver={(e) => handleMouseOver(e.object)}
                 onPointerOut={(e) => handleMouseOut(e.object)}
               >
@@ -213,7 +236,11 @@ const AboutPortal = ({ scale = 10 }) => {
                 position={[11, 0, 1.5]}
                 rotation={[0, Math.PI / 2, 0]}
                 visible={isAboutActive}
-                onClick={() => setIsAboutActive(!isAboutActive)}
+                onClick={() =>
+                  linkClickHandler(
+                    "https://open.spotify.com/artist/0ueqisN1nHYtpFIXI72faN"
+                  )
+                }
                 onPointerOver={(e) => handleMouseOver(e.object)}
                 onPointerOut={(e) => handleMouseOut(e.object)}
               >
