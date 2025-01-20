@@ -6,31 +6,32 @@ import {
 // import * as THREE from "three";
 import { Suspense } from "react";
 import WholeIsland3 from "./WholeIsland3";
-import PortalScene from "./PortalScene";
+import AboutPortal from "./AboutPortal";
+import ProjectsPortal from "./ProjectsPortal";
 import { Cloud, Sky } from "@react-three/drei";
+import useCameraStore from "../Store";
+import ControlledCamera from "./ControlledCamera";
 
 const sunPosition = [100, 50, 100];
 
 const Scene = () => {
+  const cameraPosition = useCameraStore((state) => state.cameraPosition);
+  const cameraTarget = useCameraStore((state) => state.cameraTarget);
+
   return (
     <>
-      <Environment
-        background
-        files="./envMap/3.hdr"
-        intensity={0.2}
+      <Environment background files="./envMap/3.hdr" intensity={0.2} />
+
+      <Sky sunPosition={sunPosition} rayleigh={0.05} />
+
+      <ControlledCamera
+        cameraPosition={cameraPosition}
+        cameraTarget={cameraTarget}
+        fov={90}
       />
 
-      <Sky sunPosition={sunPosition} rayleigh={0.05}/>
-
-      {/* <Cloud
-        opacity={0.2} // Controls the transparency
-        speed={0.8} // Animation speed
-        width={400} // Width of the cloud area
-        depth={2} // Z-depth of the cloud area
-        segments={1200} // Quality of the cloud
-      /> */}
-
-      <PortalScene />
+      <AboutPortal />
+      <ProjectsPortal />
 
       <Suspense
         fallback={
