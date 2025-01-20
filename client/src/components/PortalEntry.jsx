@@ -3,6 +3,7 @@ import Scene from "./Scene";
 import { useEffect, useRef, useState } from "react";
 import { BsArrowsFullscreen } from "react-icons/bs";
 import * as THREE from "three";
+import LoadingBar from "./LoadingBar";
 
 const PortalEntry = () => {
   const [loading, setLoading] = useState(true);
@@ -29,30 +30,11 @@ const PortalEntry = () => {
   }, [fullscreen]);
 
   return (
-    <div
+    <div  className="relative w-[80vw] h-[60vh] sm:w-[80vw] sm:h-[70vh] lg:w-[70vw] lg:h-[80vh] 2xl:w-[70vw] 2xl:h-[80vh]"
       ref={canvasContainerRef}
-      style={{
-        height: "50vh",
-        width: "50vw",
-        position: "relative",
-      }}
+      
     >
-      {loading && (
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            color: "black",
-            zIndex: 10,
-            fontWeight: "bold",
-            fontSize: "2rem",
-          }}
-        >
-          Loading my PORTALfoilio ...
-        </div>
-      )}
+      {loading && <LoadingBar />}
       <div
         onClick={handleFullScreen}
         style={{

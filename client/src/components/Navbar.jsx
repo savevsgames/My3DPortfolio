@@ -21,7 +21,7 @@ const Navbar = () => {
               currentPage === "/Portfolio" ? "nav-link active" : "nav-link"
             }
           >
-            Portfolio
+            2D-Portfolio
           </Link>
         </li>
         <li className="nav-item">

@@ -21,6 +21,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-spring/three": "^9.7.5",
+    "@react-spring/web": "^9.7.5",
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.9",
     "wait-on": "^8.0.2"
