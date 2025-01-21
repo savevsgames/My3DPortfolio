@@ -12,6 +12,7 @@ import HobbyPortal from "./HobbyPortal";
 import { Cloud, Sky } from "@react-three/drei";
 import useCameraStore from "../Store";
 import ControlledCamera from "./ControlledCamera";
+import CircularPath from "./CircularPath";
 
 const sunPosition = [100, 50, 100];
 
@@ -31,6 +32,7 @@ const Scene = () => {
         fov={90}
       />
 
+      <CircularPath radius={50} height={0} speed={0.1} pointerOverSpeed={0.1}/>
       <AboutPortal />
       <ProjectsPortal />
       <HobbyPortal />
