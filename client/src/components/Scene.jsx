@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import WholeIsland3 from "./WholeIsland3";
 import AboutPortal from "./AboutPortal";
 import ProjectsPortal from "./ProjectsPortal";
+import HobbyPortal from "./HobbyPortal";
 import { Cloud, Sky } from "@react-three/drei";
 import useCameraStore from "../Store";
 import ControlledCamera from "./ControlledCamera";
@@ -32,6 +33,7 @@ const Scene = () => {
 
       <AboutPortal />
       <ProjectsPortal />
+      <HobbyPortal />
 
       <Suspense
         fallback={
