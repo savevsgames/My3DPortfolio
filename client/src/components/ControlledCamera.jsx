@@ -1,5 +1,4 @@
 import { CameraControls } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import useCameraStore from "../Store";
 import { useRef, useEffect } from "react";
 

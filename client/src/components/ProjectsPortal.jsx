@@ -155,261 +155,250 @@ const ProjectsPortal = ({ scale = 10 }) => {
               <meshStandardMaterial color="#ffffff" opacity={0.2} transparent />
             </mesh>
           </group>
-          <Float>
-            <group position={[0, 2, 0]}>
-              {/* Block behind the HTML content */}
-              <mesh
-                ref={meshInfoBackgroundRef}
-                position={[0, 0, -3.5]}
-                visible={isProjectActive}
-                onClick={() =>
-                  linkClickHandler("https://github.com/savevsgames/js_rpg2")
-                }
-                onPointerOver={(e) => handleMouseOver(e.object)}
-                onPointerOut={(e) => handleMouseOut(e.object)}
-              >
-                <boxGeometry args={[11, 12, 2, 8, 8, 8]} />
-                <meshStandardMaterial color="#dd4444" />
-              </mesh>
-              {/* Shadowtide - Front */}
-              <Text3D
-                font="./font/Lexend.json"
-                position={[-4.5, 1.6, -2.5]}
-                rotation={[0, 0, 0]}
-                height={0.2}
-                size={0.6}
-                bevelEnabled
-                bevelSegments={20}
-                visible={isProjectActive}
-              >
-                <meshStandardMaterial attach="material" color="black" />
-                SHADOWTIDE ISLAND
-              </Text3D>
+          <group position={[0, 2, 0]}>
+            {/* Block behind the HTML content */}
+            <mesh
+              ref={meshInfoBackgroundRef}
+              position={[0, 0, -3.5]}
+              visible={isProjectActive}
+              onClick={() =>
+                linkClickHandler("https://github.com/savevsgames/js_rpg2")
+              }
+              onPointerOver={(e) => handleMouseOver(e.object)}
+              onPointerOut={(e) => handleMouseOut(e.object)}
+            >
+              <boxGeometry args={[11, 12, 2, 8, 8, 8]} />
+              <meshStandardMaterial color="#dd4444" />
+            </mesh>
+            {/* Shadowtide - Front */}
+            <Text3D
+              font="./font/Lexend.json"
+              position={[-4.5, 1.6, -2.5]}
+              rotation={[0, 0, 0]}
+              height={0.2}
+              size={0.6}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isProjectActive}
+            >
+              <meshStandardMaterial attach="material" color="black" />
+              SHADOWTIDE ISLAND
+            </Text3D>
 
-              <Image
-                url="./image/d20SVGLOGO.png"
-                position={[-3.3, 4.2, -2.2]}
-                scale={3.4}
-                transparent
-                visible={isProjectActive}
-              />
-              <Image
-                url="./images/rpg2-screenshot.png"
-                position={[0, -2.3, -2.2]}
-                scale={[10, 4.9, 1]}
-                fit="cover"
-                transparent
-                visible={isProjectActive}
-              />
-            </group>
-          </Float>
-          <Float>
-            <group rotation={[0, Math.PI / 3, 0]} position={[4, 0, 7.6]}>
-              {/* Better Balls - right side */}
-              <mesh
-                ref={meshRightBackgroundRef}
-                meshLeftBackgroundRef
-                position={[11, 0, 1.5]}
-                rotation={[0, Math.PI / 2, 0]}
-                visible={isProjectActive}
-                onClick={() => linkClickHandler("https://www.betterballs.com/")}
-                onPointerOver={(e) => handleMouseOver(e.object)}
-                onPointerOut={(e) => handleMouseOut(e.object)}
-              >
-                <boxGeometry args={[9, 8, 2, 8, 8, 8]} />
-                <meshStandardMaterial color="#98A9B3" />
-              </mesh>
-              {/* Text3D to the right */}
-              <Text3D
-                font="./font/Lexend.json"
-                position={[10, 2, -1.6]}
-                rotation={[0, -Math.PI / 2, 0]}
-                height={0.2}
-                size={0.6}
-                bevelEnabled
-                bevelSegments={20}
-                visible={isProjectActive}
-              >
-                <meshStandardMaterial attach="material" color="white" />
-                BETTER BALLS
-              </Text3D>
-              <primitive
-                object={betterBallsBottle.scene}
-                scale={1.5}
-                position={[10, 5, -1.5]}
-                ref={modelBottleMeshRef}
-                rotation={[
-                  0,
-                  rotationYAngleToYaw(-90),
-                  rotationYAngleToYaw(-65),
-                ]}
-                visible={isProjectActive}
-              />
+            <Image
+              url="./image/d20SVGLOGO.png"
+              position={[-3.3, 4.2, -2.2]}
+              scale={3.4}
+              transparent
+              visible={isProjectActive}
+            />
+            <Image
+              url="./images/rpg2-screenshot.png"
+              position={[0, -2.3, -2.2]}
+              scale={[10, 4.9, 1]}
+              fit="cover"
+              transparent
+              visible={isProjectActive}
+            />
+          </group>
 
-              <Image
-                url="./image/betterballsrevitacreamheart.gif"
-                position={[9.5, -0.75, 1.5]}
-                rotation={[0, -Math.PI / 2, 0]}
-                scale={[6,5,1]}
-                transparent
-                visible={isProjectActive}
-              />
-            </group>
-          </Float>
-          <Float>
-            <group
-              rotation={[0, rotationYAngleToYaw(10), 0]}
-              position={[2, 0, 9]}
+          <group rotation={[0, Math.PI / 3, 0]} position={[4, 0, 7.6]}>
+            {/* Better Balls - right side */}
+            <mesh
+              ref={meshRightBackgroundRef}
+              meshLeftBackgroundRef
+              position={[11, 0, 1.5]}
+              rotation={[0, Math.PI / 2, 0]}
+              visible={isProjectActive}
+              onClick={() => linkClickHandler("https://www.betterballs.com/")}
+              onPointerOver={(e) => handleMouseOver(e.object)}
+              onPointerOut={(e) => handleMouseOut(e.object)}
+            >
+              <boxGeometry args={[9, 8, 2, 8, 8, 8]} />
+              <meshStandardMaterial color="#98A9B3" />
+            </mesh>
+            {/* Text3D to the right */}
+            <Text3D
+              font="./font/Lexend.json"
+              position={[10, 2, -1.6]}
+              rotation={[0, -Math.PI / 2, 0]}
+              height={0.2}
+              size={0.6}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isProjectActive}
+            >
+              <meshStandardMaterial attach="material" color="white" />
+              BETTER BALLS
+            </Text3D>
+            <primitive
+              object={betterBallsBottle.scene}
               scale={1.5}
+              position={[10, 5, -1.5]}
+              ref={modelBottleMeshRef}
+              rotation={[0, rotationYAngleToYaw(-90), rotationYAngleToYaw(-65)]}
+              visible={isProjectActive}
+            />
+
+            <Image
+              url="./image/betterballsrevitacreamheart.gif"
+              position={[9.5, -0.75, 1.5]}
+              rotation={[0, -Math.PI / 2, 0]}
+              scale={[6, 5, 1]}
+              transparent
+              visible={isProjectActive}
+            />
+          </group>
+
+          <group
+            rotation={[0, rotationYAngleToYaw(10), 0]}
+            position={[2, 0, 9]}
+            scale={1.5}
+          >
+            {/* Better Balls - right side */}
+            <mesh
+              ref={meshRightBackgroundRef}
+              meshLeftBackgroundRef
+              position={[11, 0, 1.5]}
+              rotation={[0, Math.PI / 2, 0]}
+              visible={isProjectActive}
+              onClick={() =>
+                linkClickHandler(
+                  "https://github.com/soibun-sol/multi-search-dashboard"
+                )
+              }
+              onPointerOver={(e) => handleMouseOver(e.object)}
+              onPointerOut={(e) => handleMouseOut(e.object)}
             >
-              {/* Better Balls - right side */}
-              <mesh
-                ref={meshRightBackgroundRef}
-                meshLeftBackgroundRef
-                position={[11, 0, 1.5]}
-                rotation={[0, Math.PI / 2, 0]}
-                visible={isProjectActive}
-                onClick={() =>
-                  linkClickHandler(
-                    "https://github.com/soibun-sol/multi-search-dashboard"
-                  )
-                }
-                onPointerOver={(e) => handleMouseOver(e.object)}
-                onPointerOut={(e) => handleMouseOut(e.object)}
-              >
-                <boxGeometry args={[9, 8, 2, 8, 8, 8]} />
-                <meshStandardMaterial color="#333399" />
-              </mesh>
-              {/* Text3D to the right */}
-              <Text3D
-                font="./font/Lexend.json"
-                position={[10, 3, -1.6]}
-                rotation={[0, -Math.PI / 2, 0]}
-                height={0.2}
-                size={0.6}
-                bevelEnabled
-                bevelSegments={20}
-                visible={isProjectActive}
-              >
-                <meshStandardMaterial attach="material" color="#ff8833" />
-                MULTI-SEARCH
-              </Text3D>
-              <Text3D
-                font="./font/Lexend.json"
-                position={[10, 2, -1.2]}
-                rotation={[0, -Math.PI / 2, 0]}
-                height={0.08}
-                size={0.6}
-                bevelEnabled
-                bevelSegments={20}
-                visible={isProjectActive}
-              >
-                <meshStandardMaterial attach="material" color="#ff8833" />
-                DASHBOARD
-              </Text3D>
-
-              <Image
-                url="./image/MultiSearchDashboard.png"
-                position={[9.5, -0.75, 1.5]}
-                rotation={[0, -Math.PI / 2, 0]}
-                scale={[8, 3.9, 1]}
-                transparent
-                visible={isProjectActive}
-              />
-            </group>
-          </Float>
-          <Float>
-            <group rotation={[0, -Math.PI / 3, 0]} position={[-3, 0, 5.3]}>
-              {/* CatGPT - left side */}
-              <mesh
-                ref={meshLeftBackgroundRef}
-                position={[-10, 0, 5]}
-                rotation={[0, Math.PI / 2, 0]}
-                visible={isProjectActive}
-                onClick={() =>
-                  linkClickHandler(
-                    "https://github.com/OccultParrot/Tomogatch.ai"
-                  )
-                }
-                onPointerOver={(e) => handleMouseOver(e.object)}
-                onPointerOut={(e) => handleMouseOut(e.object)}
-              >
-                <boxGeometry args={[12, 10, 2, 8, 8, 8]} />
-                <meshStandardMaterial color="orange" />
-              </mesh>
-              {/* Text3D to the left */}
-              <Text3D
-                font="./font/Lexend.json"
-                position={[-9, 3, 9.5]}
-                rotation={[0, (Math.PI * 2) / 4, 0]}
-                height={0.2}
-                size={0.6}
-                bevelEnabled
-                bevelSegments={20}
-                visible={isProjectActive}
-              >
-                <meshStandardMaterial attach="material" color="black" />
-                CAT GPT
-              </Text3D>
-
-              <Image
-                url="./image/cat-gpt-logo.png"
-                position={[-8.5, -0.5, 5]}
-                rotation={[0, (Math.PI * 2) / 4, 0]}
-                scale={[6, 5.5, 1]}
-                transparent
-                visible={isProjectActive}
-              />
-            </group>
-          </Float>
-          <Float>
-            <group
-              rotation={[0, rotationYAngleToYaw(-10), 0]}
-              position={[-6, 0, 7]}
-              scale={1.3}
+              <boxGeometry args={[9, 8, 2, 8, 8, 8]} />
+              <meshStandardMaterial color="#333399" />
+            </mesh>
+            {/* Text3D to the right */}
+            <Text3D
+              font="./font/Lexend.json"
+              position={[10, 3, -1.6]}
+              rotation={[0, -Math.PI / 2, 0]}
+              height={0.2}
+              size={0.6}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isProjectActive}
             >
-              {/* FWOB - left side */}
-              <mesh
-                ref={meshLeftBackgroundRef}
-                position={[-10, 0, 5]}
-                rotation={[0, Math.PI / 2, 0]}
-                visible={isProjectActive}
-                onClick={() =>
-                  linkClickHandler(
-                    "https://friends-without-benefits.onrender.com/"
-                  )
-                }
-                onPointerOver={(e) => handleMouseOver(e.object)}
-                onPointerOut={(e) => handleMouseOut(e.object)}
-              >
-                <boxGeometry args={[12, 10, 2, 8, 8, 8]} />
-                <meshStandardMaterial color="teal" />
-              </mesh>
-              {/* Text3D to the left */}
-              <Text3D
-                font="./font/Lexend.json"
-                position={[-9, 3, 9.5]}
-                rotation={[0, (Math.PI * 2) / 4, 0]}
-                height={0.2}
-                size={0.6}
-                bevelEnabled
-                bevelSegments={20}
-                visible={isProjectActive}
-              >
-                <meshStandardMaterial attach="material" color="white" />
-                FWOB
-              </Text3D>
+              <meshStandardMaterial attach="material" color="#ff8833" />
+              MULTI-SEARCH
+            </Text3D>
+            <Text3D
+              font="./font/Lexend.json"
+              position={[10, 2, -1.2]}
+              rotation={[0, -Math.PI / 2, 0]}
+              height={0.08}
+              size={0.6}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isProjectActive}
+            >
+              <meshStandardMaterial attach="material" color="#ff8833" />
+              DASHBOARD
+            </Text3D>
 
-              <Image
-                url="./image/FWOB.png"
-                position={[-8.5, -0.5, 5]}
-                rotation={[0, (Math.PI * 2) / 4, 0]}
-                scale={[10.5, 4.9, 1]}
-                transparent
-                visible={isProjectActive}
-              />
-            </group>
-          </Float>
+            <Image
+              url="./image/MultiSearchDashboard.png"
+              position={[9.5, -0.75, 1.5]}
+              rotation={[0, -Math.PI / 2, 0]}
+              scale={[8, 3.9, 1]}
+              transparent
+              visible={isProjectActive}
+            />
+          </group>
+
+          <group rotation={[0, -Math.PI / 3, 0]} position={[-3, 0, 5.3]}>
+            {/* CatGPT - left side */}
+            <mesh
+              ref={meshLeftBackgroundRef}
+              position={[-10, 0, 5]}
+              rotation={[0, Math.PI / 2, 0]}
+              visible={isProjectActive}
+              onClick={() =>
+                linkClickHandler("https://github.com/OccultParrot/Tomogatch.ai")
+              }
+              onPointerOver={(e) => handleMouseOver(e.object)}
+              onPointerOut={(e) => handleMouseOut(e.object)}
+            >
+              <boxGeometry args={[12, 10, 2, 8, 8, 8]} />
+              <meshStandardMaterial color="orange" />
+            </mesh>
+            {/* Text3D to the left */}
+            <Text3D
+              font="./font/Lexend.json"
+              position={[-9, 3, 9.5]}
+              rotation={[0, (Math.PI * 2) / 4, 0]}
+              height={0.2}
+              size={0.6}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isProjectActive}
+            >
+              <meshStandardMaterial attach="material" color="black" />
+              CAT GPT
+            </Text3D>
+
+            <Image
+              url="./image/cat-gpt-logo.png"
+              position={[-8.5, -0.5, 5]}
+              rotation={[0, (Math.PI * 2) / 4, 0]}
+              scale={[6, 5.5, 1]}
+              transparent
+              visible={isProjectActive}
+            />
+          </group>
+
+          <group
+            rotation={[0, rotationYAngleToYaw(-10), 0]}
+            position={[-6, 0, 7]}
+            scale={1.3}
+          >
+            {/* FWOB - left side */}
+            <mesh
+              ref={meshLeftBackgroundRef}
+              position={[-10, 0, 5]}
+              rotation={[0, Math.PI / 2, 0]}
+              visible={isProjectActive}
+              onClick={() =>
+                linkClickHandler(
+                  "https://friends-without-benefits.onrender.com/"
+                )
+              }
+              onPointerOver={(e) => handleMouseOver(e.object)}
+              onPointerOut={(e) => handleMouseOut(e.object)}
+            >
+              <boxGeometry args={[12, 10, 2, 8, 8, 8]} />
+              <meshStandardMaterial color="teal" />
+            </mesh>
+            {/* Text3D to the left */}
+            <Text3D
+              font="./font/Lexend.json"
+              position={[-9, 3, 9.5]}
+              rotation={[0, (Math.PI * 2) / 4, 0]}
+              height={0.2}
+              size={0.6}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isProjectActive}
+            >
+              <meshStandardMaterial attach="material" color="white" />
+              FWOB
+            </Text3D>
+
+            <Image
+              url="./image/FWOB.png"
+              position={[-8.5, -0.5, 5]}
+              rotation={[0, (Math.PI * 2) / 4, 0]}
+              scale={[10.5, 4.9, 1]}
+              transparent
+              visible={isProjectActive}
+            />
+          </group>
+
           <group>
             <mesh
             // position={[0, -groundProps.height, 0]}
@@ -429,7 +418,7 @@ const ProjectsPortal = ({ scale = 10 }) => {
   );
 };
 
-useGLTF.preload("./model/Animation_Walking_withSkin.glb");
-useGLTF.preload("./model/Animation_Idle_withSkin.glb");
+useGLTF.preload("Armature|Chair_Sit_Idle_M|baselayer");
+useGLTF.preload("./model/better_balls_bottle.glb");
 
 export default ProjectsPortal;

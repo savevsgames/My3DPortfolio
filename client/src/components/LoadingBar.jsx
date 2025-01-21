@@ -4,13 +4,15 @@ import { useSpring, animated } from "@react-spring/web";
 const LoadingBar = () => {
   const { progress } = useProgress(); // Get loading progress (0-100)
 
-  // Animation for the loading bar width
+  // Bind progress to the spring animation
   const animatedProps = useSpring({
+    width: `${progress}%`, // Animate width from 0% to 100%
     config: { tension: 120, friction: 14 },
   });
 
   return (
     <>
+      {/* Loading Bar Container */}
       <div
         style={{
           position: "absolute",
@@ -25,6 +27,7 @@ const LoadingBar = () => {
           zIndex: 10,
         }}
       >
+        {/* Animated Loading Bar */}
         <animated.div
           style={{
             ...animatedProps,
@@ -33,20 +36,22 @@ const LoadingBar = () => {
           }}
         />
       </div>
+
+      {/* Loading Text */}
       <div
         style={{
           position: "absolute",
-          top: "40%",
+          top: "60%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "300px",
-          height: "20px",
-          zIndex: 10,
           color: "#333333",
           fontSize: "1.5rem",
+          zIndex: 10,
         }}
       >
-        <h1 style={{ margin: 0, textAlign: "center" }}>Loading PORTALfolio ...</h1>
+        <h1 style={{ margin: 0, textAlign: "center" }}>
+          Loading PORTALfolio...
+        </h1>
       </div>
     </>
   );

@@ -9,7 +9,7 @@ import WholeIsland3 from "./WholeIsland3";
 import AboutPortal from "./AboutPortal";
 import ProjectsPortal from "./ProjectsPortal";
 import HobbyPortal from "./HobbyPortal";
-import { Cloud, Sky } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 import useCameraStore from "../Store";
 import ControlledCamera from "./ControlledCamera";
 import CircularPath from "./CircularPath";
@@ -47,7 +47,6 @@ const Scene = () => {
       >
         <WholeIsland3 envMapIntensity={0.2} />
       </Suspense>
-      {/* <OrbitControls /> */}
     </>
   );
 };

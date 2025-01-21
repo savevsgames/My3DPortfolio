@@ -17,6 +17,8 @@ import useCameraStore from "../Store";
 import { rotationYAngleToYaw } from "../utils/CustomUtils";
 import { Physics, RigidBody } from "@react-three/rapier";
 
+import CircularPathDrone from "./CircularPathDrone";
+
 const HobbyPortal = ({ scale = 10 }) => {
   const updateCamera = useCameraStore((state) => state.updateCamera);
   const [isHobbyActive, setIsHobbyActive] = useState(false);
@@ -31,10 +33,11 @@ const HobbyPortal = ({ scale = 10 }) => {
   const d20SVG = useGLTF("./model/D20SVG2.glb");
   console.log(d20SVG.scene);
 
-  const writersDeskModel = useGLTF("./model/writers_desk.glb");
-  const droneModel = useGLTF("./model/drone.glb");
-  const guitarModel = useGLTF("./model/guitar3.glb");
-  const campfireModel = useGLTF("./model/campfire1.glb");
+  const writersDeskModel = useGLTF("./model/writers_desk-transformed.glb");
+  const droneModel = useGLTF("./model/drone2-transformed.glb");
+  const guitarModel = useGLTF("./model/guitar3-transformed.glb");
+  const campfireModel = useGLTF("./model/campfire1-transformed.glb");
+  const artStandModel = useGLTF("./model/artstand-transformed.glb");
 
   const gregHobbyModel1 = useGLTF(
     "./model/gregOfficeWorkerModel/Animation_Victory_Cheer_withSkin.glb"
@@ -92,19 +95,19 @@ const HobbyPortal = ({ scale = 10 }) => {
     updateCamera([80, 100, -100], [-100, 60, -80]);
   };
 
-// Function to handle impulse on click
-const clickImpulseHandler = (ref, target) => {
+  // Function to handle impulse on click
+  const clickImpulseHandler = (ref, target) => {
     if (ref.current) {
       // Get the current position of the object
       const currentPosition = ref.current.translation();
-  
+
       // Calculate the direction vector toward the target
       const impulseVector = {
         x: target[0] - currentPosition.x,
         y: target[1] - currentPosition.y,
         z: target[2] - currentPosition.z,
       };
-  
+
       // Normalize the impulse vector
       const magnitude = Math.sqrt(
         impulseVector.x ** 2 + impulseVector.y ** 2 + impulseVector.z ** 2
@@ -114,7 +117,7 @@ const clickImpulseHandler = (ref, target) => {
         y: (impulseVector.y / magnitude) * 250,
         z: (impulseVector.z / magnitude) * 10,
       };
-  
+
       // Apply the impulse
       ref.current.applyImpulse(normalizedImpulse, true); // Apply at the center of mass
     }
@@ -136,6 +139,13 @@ const clickImpulseHandler = (ref, target) => {
           <ambientLight intensity={isHobbyActive ? 0.8 : 0.1} />
 
           {/* FLOOR */}
+          <CircularPathDrone
+            radius={16}
+            height={15}
+            speed={0.4}
+            oscillationAmplitude={5}
+            oscillationSpeed={2}
+          />
 
           <group>
             <Text font="./font/bold.ttf" position={[0, 10, -10]} fontSize={5}>
@@ -297,6 +307,34 @@ const clickImpulseHandler = (ref, target) => {
             />
           </group>
 
+          <group
+            rotation={[0, rotationYAngleToYaw(30), 0]}
+            position={[0, 0, 0]}
+            scale={1.3}
+          >
+            {/* Text3D to the left */}
+            <Text3D
+              font="./font/Lexend.json"
+              position={[0, 12, -10]}
+              rotation={[0, rotationYAngleToYaw(-30), 0]}
+              height={0.2}
+              size={0.8}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isHobbyActive}
+            >
+              <meshStandardMaterial attach="material" color="#505E69" />
+              ELECTRONICS
+            </Text3D>
+            {/* <primitive
+              object={droneModel.scene}
+              scale={isHobbyActive ? 8 : 2.5}
+              position={[0, 10, 0]}
+              rotation={[0, rotationYAngleToYaw(30), 0]}
+              visible={isHobbyActive}
+            /> */}
+          </group>
+
           <group rotation={[0, -Math.PI / 3, 0]} position={[-3, 0, 5.3]}>
             {/* Music - left side */}
 
@@ -349,6 +387,34 @@ const clickImpulseHandler = (ref, target) => {
             />
           </group>
 
+          <group
+            rotation={[0, rotationYAngleToYaw(30), 0]}
+            position={[-6, 0, 10]}
+            scale={1.3}
+          >
+            {/* Text3D to the left */}
+            <Text3D
+              font="./font/Lexend.json"
+              position={[-7, 4, 6.8]}
+              rotation={[0, (Math.PI * 2) / 4, 0]}
+              height={0.2}
+              size={0.8}
+              bevelEnabled
+              bevelSegments={20}
+              visible={isHobbyActive}
+            >
+              <meshStandardMaterial attach="material" color="#505E69" />
+              ART
+            </Text3D>
+            <primitive
+              object={artStandModel.scene}
+              scale={isHobbyActive ? 3 : 2.5}
+              position={[-6, 0, 4]}
+              rotation={[0, rotationYAngleToYaw(90), 0]}
+              visible={isHobbyActive}
+            />
+          </group>
+
           <group>
             <mesh>
               <sphereGeometry args={[groundProps.radius, 64, 64]} />
@@ -365,7 +431,12 @@ const clickImpulseHandler = (ref, target) => {
   );
 };
 
-useGLTF.preload("./model/Animation_Walking_withSkin.glb");
-useGLTF.preload("./model/Animation_Idle_withSkin.glb");
+useGLTF.preload(
+  "./model/gregOfficeWorkerModel/Animation_Victory_Cheer_withSkin.glb"
+);
+useGLTF.preload("./model/guitar3-transformed.glb");
+useGLTF.preload("./model/drone.glb");
+useGLTF.preload("./model/writers_desk-transformed.glb");
+useGLTF.preload("./model/campfire1-transformed.glb");
 
 export default HobbyPortal;
