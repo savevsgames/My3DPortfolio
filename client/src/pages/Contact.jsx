@@ -38,22 +38,41 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // further check logic can be added here to validate the form before handling the data
+
+    // 1) Validate
     const isValid = regexEmailChecker.isValidEmail(contact.email);
     if (!isValid) {
       alert("Please enter a valid email address");
       return;
     }
-    setIsSubmitted(true);
-    console.log(contact);
-    setSavedContact(contact);
-    setContact({
-      name: "",
-      email: "",
-      message: "",
-    });
+
+    // 2) Prepare FormData
+    const formData = new FormData(e.target);
+
+    try {
+      // 3) POST to Formspree
+      const response = await fetch("https://formspree.io/f/mzzdadok", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error(`Formspree error: ${response.statusText}`);
+      }
+
+      // 4) On success -> show success state
+      setIsSubmitted(true);
+      setSavedContact(contact);
+      setContact({ name: "", email: "", message: "" });
+      alert("Thanks! Your message has been sent.");
+    } catch (error) {
+      alert("Oops! There was an error submitting the form.");
+      console.error(error);
+    }
   };
 
   return (

@@ -301,55 +301,105 @@ export const skills = [
 
 
 
+// export const projects = [
+//   {
+//     id: 1,
+//     img: "/images/rpg2-screenshot.png",
+//     url: "https://savevsgames.itch.io/js-rpg2",
+//     github: "https://github.com/savevsgames/js_rpg2",
+//     title: "JavaScript RPG V2",
+//     text: "JS_RPG2 is a learning project built using TypeScript, Phaser, Ink.js and Vite. This project is part of my ongoing journey to deepen my understanding of game development. I am adapting the story of a novel I was writing called Shadowtide Island into a browswer-based game that will be also be playable on mobile. This is my current passion project. I enjoy creating and running TTRPGs and this project is a way to bring that experience to a wider audience and engage with the community online.",
+//   },
+//   {
+//     id: 2,
+//     img: "/images/sportsweather-screenshot.png",
+//     url: "https://gameplanning-sportsweatherannouncer.onrender.com/",
+//     github:
+//       "https://github.com/savevsgames/GamePlanning---SportsWeatherAnnouncer",
+//     title: "Game Planning - Sports Weather Announcer",
+//     text: "The Game Planning - Sports Weather Announcer is a web application that combines data from the OpenWeather API with OpenAI's API to produce a 5-day weather forecast, delivered in the style of a baseball radio announcer. It provides a fun and engaging way to present weather information, making it perfect for use in game planning scenarios where weather plays a role in outdoor activities.",
+//   },
+//   {
+//     id: 3,
+//     img: "/images/readmegenerator-screenshot.png",
+//     url: "https://github.com/savevsgames/GitHub-README-Generator",
+//     github: "https://github.com/savevsgames/GitHub-README-Generator",
+//     title: "GitHub README Generator",
+//     text: "The GitHub README Generator is a command-line application that dynamically generates a professional README.md file based on user input. This tool streamlines the process of creating comprehensive project documentation, ensuring that developers can quickly produce high-quality READMEs for their GitHub repositories. I have personally used it to create my README files since I coded it and I plan to continue to develop it, adding GPT functionality to help with the writing process, as well as other quality of life improvements. I especially like the badge generator.",
+//   },
+//   {
+//     id: 4,
+//     img: "/images/greggingalgorithms-screenshot.png",
+//     url: "https://github.com/savevsgames/Gregging-Algorithms-JS",
+//     github: "https://github.com/savevsgames/Gregging-Algorithms-JS",
+//     title: "Gregging Algorithms JS",
+//     text: "This repository is a learning project that aims to interpret and re-explain the concepts and code found in the book 'Grokking Algorithms' by Aditya Bhargava. The code examples from the book have been translated into JavaScript as I learn and explore the algorithms presented in the book. The purpose of this project is to solidify my understanding of the algorithms by implementing them in JavaScript and providing my own explanations and examples. It serves as a personal learning resource and a way to share my journey with others who may be interested in learning about algorithms and data structures.",
+//   },
+//   {
+//     id: 5,
+//     img: "/images/employeemanagementdb-screenshot.png",
+//     url: "https://github.com/savevsgames/EmployeeManagmentDB",
+//     github: "https://github.com/savevsgames/EmployeeManagmentDB",
+//     title: "Employee Management System CLI",
+//     text: "The Employee Management System CLI is a command-line application that enables users to manage employees, roles, and departments within a company. This tool provides an interactive experience for viewing, adding, and updating employee information, roles, and departments in a PostgreSQL database.",
+//   },
+//   {
+//     id: 6,
+//     img: "/images/multisearchdashboard-screenshot.png",
+//     url: "https://soibun-sol.github.io/multi-search-dashboard/",
+//     github: "https://github.com/soibun-sol/multi-search-dashboard/",
+//     title: "Multi-Search Dashboard",
+//     text: "Multi-Search Dashboard was an idea I had to pull together all the search engines I use into one place. I worked with a team to create this project. I was responsible for the overall structure of the project, the search engine API calls to the Geolocation API, the Pexels API and the OpenWeather API",
+//   },
+// ];
 export const projects = [
   {
     id: 1,
     img: "/images/rpg2-screenshot.png",
-    url: "https://savevsgames.itch.io/js-rpg2",
+    url: "https://savevsgames.itch.io/js-rpg2", 
     github: "https://github.com/savevsgames/js_rpg2",
     title: "JavaScript RPG V2",
-    text: "JS_RPG2 is a learning project built using TypeScript, Phaser, Ink.js and Vite. This project is part of my ongoing journey to deepen my understanding of game development. I am adapting the story of a novel I was writing called Shadowtide Island into a browswer-based game that will be also be playable on mobile. This is my current passion project. I enjoy creating and running TTRPGs and this project is a way to bring that experience to a wider audience and engage with the community online.",
+    text: "JS_RPG2 is an ongoing passion project built with TypeScript, Phaser, and Ink.js. I'm adapting my novel, 'Shadowtide Island,' into a browser-based game that’s also playable on mobile. It merges my love of TTRPGs with coding to create an immersive storytelling experience.",
   },
   {
     id: 2,
-    img: "/images/sportsweather-screenshot.png",
-    url: "https://gameplanning-sportsweatherannouncer.onrender.com/",
-    github:
-      "https://github.com/savevsgames/GamePlanning---SportsWeatherAnnouncer",
-    title: "Game Planning - Sports Weather Announcer",
-    text: "The Game Planning - Sports Weather Announcer is a web application that combines data from the OpenWeather API with OpenAI's API to produce a 5-day weather forecast, delivered in the style of a baseball radio announcer. It provides a fun and engaging way to present weather information, making it perfect for use in game planning scenarios where weather plays a role in outdoor activities.",
-  },
-  {
-    id: 3,
-    img: "/images/readmegenerator-screenshot.png",
+    img: "/images/readmegenerator-screenshot.png", 
     url: "https://github.com/savevsgames/GitHub-README-Generator",
     github: "https://github.com/savevsgames/GitHub-README-Generator",
     title: "GitHub README Generator",
-    text: "The GitHub README Generator is a command-line application that dynamically generates a professional README.md file based on user input. This tool streamlines the process of creating comprehensive project documentation, ensuring that developers can quickly produce high-quality READMEs for their GitHub repositories. I have personally used it to create my README files since I coded it and I plan to continue to develop it, adding GPT functionality to help with the writing process, as well as other quality of life improvements. I especially like the badge generator.",
+    text: "A Node.js CLI tool that dynamically generates a polished README.md based on user prompts. It streamlines project documentation by handling badges, descriptions, and more, with plans to integrate GPT for improved writing assistance.",
+  },
+  {
+    id: 3,
+    img: "/image/FWOB.png", 
+    url: "https://friends-without-benefits.onrender.com/", 
+    github: "https://github.com/savevsgames/friends-without-benefits",
+    title: "friends-without-benefits",
+    text: "FRIENDS WITHOUT BENEFITS is a multiplayer scavenger hunt game where you use your webcam to find common objects, score points, and climb the leaderboard. We trained our own custom TensorFlow model to recognize objects in real‐time. Now you can play against friends, share video feeds, chat, and see who can spot items fastest!",
   },
   {
     id: 4,
-    img: "/images/greggingalgorithms-screenshot.png",
-    url: "https://github.com/savevsgames/Gregging-Algorithms-JS",
-    github: "https://github.com/savevsgames/Gregging-Algorithms-JS",
-    title: "Gregging Algorithms JS",
-    text: "This repository is a learning project that aims to interpret and re-explain the concepts and code found in the book 'Grokking Algorithms' by Aditya Bhargava. The code examples from the book have been translated into JavaScript as I learn and explore the algorithms presented in the book. The purpose of this project is to solidify my understanding of the algorithms by implementing them in JavaScript and providing my own explanations and examples. It serves as a personal learning resource and a way to share my journey with others who may be interested in learning about algorithms and data structures.",
+    img: "/image/CATGPT.png", 
+    url: "", // TODO: Add render live demo link and change URL of github when swapped to render paid
+    github: "https://github.com/OccultParrot/Tomogatch.ai",
+    title: "Tomogatch.ai (CAT-GPT)",
+    text: "CAT-GPT is a playful virtual pet application built with React on the client side and Node.js + Express on the server. It uses GPT-based AI for real-time chat interactions, allowing the pet to evolve based on user behavior. A document database stores conversation summaries for the OpenAI API, while a SQL database handles user accounts, yarn currency, and transactions. Yarn can be spent feeding and playing with the pet, adding a fun, gamified layer. Designed for scalability and ongoing updates, CAT-GPT grows with user feedback.",
   },
   {
     id: 5,
-    img: "/images/employeemanagementdb-screenshot.png",
-    url: "https://github.com/savevsgames/EmployeeManagmentDB",
-    github: "https://github.com/savevsgames/EmployeeManagmentDB",
-    title: "Employee Management System CLI",
-    text: "The Employee Management System CLI is a command-line application that enables users to manage employees, roles, and departments within a company. This tool provides an interactive experience for viewing, adding, and updating employee information, roles, and departments in a PostgreSQL database.",
-  },
-  {
-    id: 6,
     img: "/images/multisearchdashboard-screenshot.png",
     url: "https://soibun-sol.github.io/multi-search-dashboard/",
     github: "https://github.com/soibun-sol/multi-search-dashboard/",
     title: "Multi-Search Dashboard",
-    text: "Multi-Search Dashboard was an idea I had to pull together all the search engines I use into one place. I worked with a team to create this project. I was responsible for the overall structure of the project, the search engine API calls to the Geolocation API, the Pexels API and the OpenWeather API",
+    text: "A collaborative project unifying various search engines in one convenient interface. I managed the core structure and integrated geolocation, weather, and image APIs, creating a central hub for diverse search needs.",
+  },
+  {
+    id: 6,
+    img: "/images/greggingalgorithms-screenshot.png", // Placeholder path
+    url: "https://github.com/savevsgames/Gregging-Algorithms-JS",
+    github: "https://github.com/savevsgames/Gregging-Algorithms-JS",
+    title: "Gregging Algorithms JS",
+    text: "My personal journey through 'Grokking Algorithms' by implementing and re-explaining its concepts in JavaScript. This helps me deepen my understanding of data structures and algorithms—and share insights with fellow learners.",
   },
 ];
 
