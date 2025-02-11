@@ -23,28 +23,20 @@ const Contact = () => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
 
-  const validateField = (e) => {
-    // further validation logic can be added here
-    const { name, value } = e.target;
-    if (name === "name" && value.length < 3) {
-      alert("Name must be at least 3 characters long");
-      return false;
-    } else if (name === "email" && !value.includes("@")) {
-      alert("Email must contain an @ symbol");
-      return false;
-    } else if (name === "message" && value.length < 10) {
-      alert("Message must be at least 10 characters long");
-      return false;
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // 1) Validate
-    const isValid = regexEmailChecker.isValidEmail(contact.email);
-    if (!isValid) {
+    if (contact.name.length < 3) {
+      alert("Name must be at least 3 characters long");
+      return;
+    }
+    if (!regexEmailChecker.isValidEmail(contact.email)) {
       alert("Please enter a valid email address");
+      return;
+    }
+    if (contact.message.length < 10) {
+      alert("Message must be at least 10 characters long");
       return;
     }
 
@@ -92,7 +84,6 @@ const Contact = () => {
           <label htmlFor="name">Name:</label>
           <input
             className="border-2 border-slate-500 p-4 rounded-xl shadow-xl caret-sky-950"
-            onBlur={validateField}
             type="text"
             id="name"
             name="name"
@@ -104,7 +95,6 @@ const Contact = () => {
           <label htmlFor="email">Email:</label>
           <input
             className="border-2 border-slate-500 p-4 rounded-xl shadow-xl caret-sky-500"
-            onBlur={validateField}
             type="email"
             id="email"
             name="email"
@@ -115,7 +105,6 @@ const Contact = () => {
           />
           <label htmlFor="message">Message:</label>
           <textarea
-            onBlur={validateField}
             style={textareaStyle}
             className="border-2 border-slate-500 p-4 rounded-xl shadow-xl caret-sky-500"
             id="message"
