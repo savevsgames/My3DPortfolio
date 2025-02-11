@@ -1,14 +1,10 @@
-import {
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaPython,
-  FaInstagramSquare,
-  FaLinkedin,
-} from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { FaCss3Alt, FaGithub } from "react-icons/fa6";
+import { FaJsSquare, FaReact, FaNodeJs, FaDatabase, FaBrain, FaLock, FaGithub, FaSyncAlt, FaMicrophone, FaCube, FaProjectDiagram, FaCogs } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaLinkedin, FaInstagramSquare } from 'react-icons/fa';
+import { FaAws } from "react-icons/fa6";
+import { SiTypescript, SiRedux, SiPostgresql, SiSequelize, SiMongodb, SiGraphql, SiDocker, SiMicrosoftazure, SiGithubactions, SiCypress, SiSocketdotio, SiRedis, SiDart, SiShopify, SiAdobe, SiObsstudio, SiBlender, SiThreedotjs } from 'react-icons/si';
+import { MdApi } from 'react-icons/md';
+import { TbDroplet, TbLayout } from 'react-icons/tb';
+
 
 export const hero = {
   img: "/images/gregwebavatar_angled.png",
@@ -18,67 +14,292 @@ export const defaultImg = {
   img: "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 };
 
+
 export const skills = [
   {
     id: 1,
-    title: "HTML&CSS",
+    title: "JavaScript & TypeScript",
     icon: (
       <span className="flex flex-row">
-        <FaHtml5 className="text-slate-500 h-8 w-8" />
+        <FaJsSquare className="text-slate-500 h-8 w-8 mr-2" />
+        <SiTypescript className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <FaJsSquare className="text-sky-950 h-16 w-16 mr-4" />
+        <SiTypescript className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "I love using JavaScript to bring interactive experiences to the web, from dynamic front-end features to server-side logic. By adding TypeScript’s strong typing, I write cleaner, more maintainable code and catch errors early.",
+  },
+  {
+    id: 2,
+    title: "React & Redux/Zustand",
+    icon: (
+      <span className="flex flex-row">
+        <FaReact className="text-slate-500 h-8 w-8 mr-2" />
+        <SiRedux className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <FaReact className="text-sky-950 h-16 w-16 mr-4" />
+        <SiRedux className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "I have advanced proficiency in React for building modular UIs. Pairing it with Redux or Zustand streamlines state management, ensuring predictable data flow and a smooth user experience.",
+  },
+  {
+    id: 3,
+    title: "Node.js",
+    icon: <FaNodeJs className="text-slate-500 h-8 w-8" />,
+    icon2: <FaNodeJs className="text-sky-950 h-16 w-16" />,
+    text: "Node.js is my go-to for building scalable, high-performance back-end applications in JavaScript, thanks to its event-driven, non-blocking I/O model.",
+  },
+  {
+    id: 4,
+    title: "HTML & CSS",
+    icon: (
+      <span className="flex flex-row">
+        <FaHtml5 className="text-slate-500 h-8 w-8 mr-2" />
         <FaCss3Alt className="text-slate-500 h-8 w-8" />
       </span>
     ),
     icon2: (
       <span className="flex flex-row">
-        <FaHtml5 className="text-sky-950 h-16 w-16" />
+        <FaHtml5 className="text-sky-950 h-16 w-16 mr-4" />
         <FaCss3Alt className="text-sky-950 h-16 w-16" />
       </span>
     ),
-    text: "Artistic and creative design skills, with a focus on responsive web design and a strong understanding of web standards and best practices",
-  },
-  {
-    id: 2,
-    title: "Javascript",
-    icon: <FaJs className="text-slate-500 h-8 w-8" />,
-    icon2: <FaJs className="text-sky-950 h-16 w-16" />,
-    text: "I love JavaScript, and I have a strong understanding of the language. I enjoy making the web interactive and dynamic in creative ways.",
-  },
-  {
-    id: 3,
-    title: "Typescript",
-    icon: <SiTypescript className=" text-slate-500 h-8 w-8" />,
-    icon2: <SiTypescript className=" text-sky-950 h-16 w-16" />,
-    text: "I have a strong understanding of TypeScript, and I enjoy using it to write clean, maintainable code with fewer bugs.",
-  },
-  {
-    id: 4,
-    title: "React",
-    icon: <FaReact className=" text-slate-500 h-8 w-8" />,
-    icon2: <FaReact className=" text-sky-950 h-16 w-16" />,
-    text: "Advanced proficiency in React, developing efficient and interactive front-end applications with a strong emphasis on component-based architecture.",
+    text: "I blend artistic design with semantic HTML and modern CSS to create responsive, accessible, and visually appealing web pages.",
   },
   {
     id: 5,
-    title: "Python",
-    icon: <FaPython className=" text-slate-500 h-8 w-8" />,
-    icon2: <FaPython className=" text-sky-950 h-16 w-16" />,
-    text: "I enjoy writing algorithms and coding arduino projects in Python. I have a strong understanding of the language and its libraries.",
+    title: "Database Management",
+    icon: <FaDatabase className="text-slate-500 h-8 w-8" />,
+    icon2: <FaDatabase className="text-sky-950 h-16 w-16" />,
+    text: "I design and optimize database schemas for scalability, focusing on data normalization, indexing, and efficient queries across different systems.",
   },
   {
     id: 6,
-    title: "PostgreSQL",
-    icon: <BiLogoPostgresql className="text-slate-500 h-8 w-8" />,
-    icon2: <BiLogoPostgresql className="text-sky-950 h-16 w-16" />,
-    text: "I have experience with PostgreSQL, and cloud-based databases. I enjoy 3NF database design and writing efficient queries.",
+    title: "PostgreSQL & Sequelize",
+    icon: (
+      <span className="flex flex-row">
+        <SiPostgresql className="text-slate-500 h-8 w-8 mr-2" />
+        <SiSequelize className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <SiPostgresql className="text-sky-950 h-16 w-16 mr-4" />
+        <SiSequelize className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "PostgreSQL’s robustness paired with Sequelize’s ORM features speeds up development while still allowing custom, optimized SQL when needed.",
   },
   {
     id: 7,
-    title: "Github",
-    icon: <FaGithub className="text-slate-500 h-8 w-8" />,
-    icon2: <FaGithub className="text-sky-950 h-16 w-16" />,
-    text: "I use GitHub for version control and collaboration. I enjoy contributing to open-source projects and the idea of sharing my code with the community.",
+    title: "MongoDB & GraphQL",
+    icon: (
+      <span className="flex flex-row">
+        <SiMongodb className="text-slate-500 h-8 w-8 mr-2" />
+        <SiGraphql className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <SiMongodb className="text-sky-950 h-16 w-16 mr-4" />
+        <SiGraphql className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "MongoDB’s flexible, document-based structure coupled with GraphQL simplifies data fetching, enabling efficient and highly adaptable APIs.",
+  },
+  {
+    id: 8,
+    title: "APIs",
+    icon: <MdApi className="text-slate-500 h-8 w-8" />,
+    icon2: <MdApi className="text-sky-950 h-16 w-16" />,
+    text: "I develop RESTful and GraphQL APIs with clear documentation, security best practices, and performance in mind for seamless integration.",
+  },
+  {
+    id: 9,
+    title: "Docker & DevOps",
+    icon: (
+      <span className="flex flex-row">
+        <SiDocker className="text-slate-500 h-8 w-8 mr-2" />
+        <FaCogs className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <SiDocker className="text-sky-950 h-16 w-16 mr-4" />
+        <FaCogs className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "Containerizing apps with Docker ensures consistent environments. Adopting DevOps practices helps me automate builds, tests, and deployments.",
+  },
+  {
+    id: 10,
+    title: "AWS, Azure & Render",
+    icon: (
+      <span className="flex flex-row">
+        {/* If no Render icon: just AWS + Azure */}
+        <FaAws className="text-slate-500 h-8 w-8 mr-2" />
+        <SiMicrosoftazure className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <FaAws className="text-sky-950 h-16 w-16 mr-4" />
+        <SiMicrosoftazure className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "I deploy and scale full-stack applications on AWS, Azure, and Render, leveraging various cloud services to ensure reliability and high availability.",
+  },
+  {
+    id: 11,
+    title: "GitHub & GitHub Actions",
+    icon: (
+      <span className="flex flex-row">
+        <FaGithub className="text-slate-500 h-8 w-8 mr-2" />
+        <SiGithubactions className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <FaGithub className="text-sky-950 h-16 w-16 mr-4" />
+        <SiGithubactions className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "GitHub is my hub for collaboration and version control. With GitHub Actions, I automate tests, builds, and deployments for smoother workflows.",
+  },
+  {
+    id: 12,
+    title: "CI/CD",
+    icon: <FaSyncAlt className="text-slate-500 h-8 w-8" />,
+    icon2: <FaSyncAlt className="text-sky-950 h-16 w-16" />,
+    text: "I set up continuous integration and delivery pipelines to automate builds, tests, and deployments, ensuring rapid iteration and high code quality.",
+  },
+  {
+    id: 13,
+    title: "Cypress (Testing)",
+    icon: <SiCypress className="text-slate-500 h-8 w-8" />,
+    icon2: <SiCypress className="text-sky-950 h-16 w-16" />,
+    text: "I use Cypress to run end-to-end tests that simulate real-user interactions, helping me catch regressions early and maintain reliability in complex apps.",
+  },
+  {
+    id: 14,
+    title: "Socket.IO",
+    icon: <SiSocketdotio className="text-slate-500 h-8 w-8" />,
+    icon2: <SiSocketdotio className="text-sky-950 h-16 w-16" />,
+    text: "Socket.IO powers my real-time apps—like chat platforms and live dashboards—providing instant, bi-directional communication for engaging experiences.",
+  },
+  {
+    id: 15,
+    title: "Prompt Engineering, LangChain & LangGraph",
+    icon: <FaBrain className="text-slate-500 h-8 w-8" />,
+    icon2: <FaBrain className="text-sky-950 h-16 w-16" />,
+    text: "I craft prompts that optimize AI outputs, building sophisticated language pipelines with tools like LangChain and LangGraph for deeper text analysis.",
+  },
+  {
+    id: 16,
+    title: "Authentication & Security",
+    icon: <FaLock className="text-slate-500 h-8 w-8" />,
+    icon2: <FaLock className="text-sky-950 h-16 w-16" />,
+    text: "I integrate secure auth flows with OAuth, JWT, and MFA. I'm vigilant about encryption, XSS, SQL injection, and other vulnerabilities.",
+  },
+  {
+    id: 17,
+    title: "Redis",
+    icon: <SiRedis className="text-slate-500 h-8 w-8" />,
+    icon2: <SiRedis className="text-sky-950 h-16 w-16" />,
+    text: "I use Redis for caching and session management. Its in-memory data store excels at real-time analytics and high-throughput operations.",
+  },
+  {
+    id: 18,
+    title: "Liquid",
+    icon: <TbDroplet className="text-slate-500 h-8 w-8" />,
+    icon2: <TbDroplet className="text-sky-950 h-16 w-16" />,
+    text: "I use Liquid templating (especially in Shopify) for dynamic content rendering, offering straightforward syntax for reusable layouts and themes.",
+  },
+  {
+    id: 19,
+    title: "Dart",
+    icon: <SiDart className="text-slate-500 h-8 w-8" />,
+    icon2: <SiDart className="text-sky-950 h-16 w-16" />,
+    text: "I leverage Dart for cross-platform development (e.g., Flutter), combining strong typing and modern syntax for smooth mobile and web deployments.",
+  },
+  {
+    id: 20,
+    title: "Shopify",
+    icon: <SiShopify className="text-slate-500 h-8 w-8" />,
+    icon2: <SiShopify className="text-sky-950 h-16 w-16" />,
+    text: "I customize Shopify stores, leveraging its APIs and Liquid templates to create seamless e-commerce experiences with standout design.",
+  },
+  {
+    id: 21,
+    title: "Adobe",
+    icon: <SiAdobe className="text-slate-500 h-8 w-8" />,
+    icon2: <SiAdobe className="text-sky-950 h-16 w-16" />,
+    text: "I use Adobe tools (Photoshop, Illustrator, XD) to design wireframes, edit graphics, and maintain a professional aesthetic in my projects.",
+  },
+  {
+    id: 22,
+    title: "Digital Audio Recording & OBS Streaming",
+    icon: (
+      <span className="flex flex-row">
+        <FaMicrophone className="text-slate-500 h-8 w-8 mr-2" />
+        <SiObsstudio className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <FaMicrophone className="text-sky-950 h-16 w-16 mr-4" />
+        <SiObsstudio className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "I record and edit audio for podcasts, music, and video projects. OBS allows me to stream live demos, events, and tutorials with professional polish.",
+  },
+  {
+    id: 23,
+    title: "Blender, Three.js & React Three/Fiber",
+    icon: (
+      <span className="flex flex-row">
+        <SiBlender className="text-slate-500 h-8 w-8 mr-2" />
+        <SiThreedotjs className="text-slate-500 h-8 w-8 mr-2" />
+        <FaCube className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <SiBlender className="text-sky-950 h-16 w-16 mr-4" />
+        <SiThreedotjs className="text-sky-950 h-16 w-16 mr-4" />
+        <FaCube className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "I create 3D assets in Blender and bring them to the web with Three.js and React Three/Fiber, delivering rich, interactive 3D experiences.",
+  },
+  {
+    id: 24,
+    title: "Wireframing & ERD",
+    icon: (
+      <span className="flex flex-row">
+        <TbLayout className="text-slate-500 h-8 w-8 mr-2" />
+        <FaProjectDiagram className="text-slate-500 h-8 w-8" />
+      </span>
+    ),
+    icon2: (
+      <span className="flex flex-row">
+        <TbLayout className="text-sky-950 h-16 w-16 mr-4" />
+        <FaProjectDiagram className="text-sky-950 h-16 w-16" />
+      </span>
+    ),
+    text: "I plan application flows with wireframes for intuitive usability. Entity Relationship Diagrams (ERDs) help me build clear, scalable data models.",
   },
 ];
+
+
 
 export const projects = [
   {

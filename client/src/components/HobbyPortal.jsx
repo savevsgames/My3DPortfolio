@@ -16,25 +16,31 @@ import { useAnimations } from "@react-three/drei";
 import useCameraStore from "../Store";
 import { rotationYAngleToYaw } from "../utils/CustomUtils";
 import { Physics, RigidBody } from "@react-three/rapier";
+import { PositionalAudio } from "@react-three/drei";
 
 import CircularPathDrone from "./CircularPathDrone";
 
 const HobbyPortal = ({ scale = 10 }) => {
   const updateCamera = useCameraStore((state) => state.updateCamera);
   const [isHobbyActive, setIsHobbyActive] = useState(false);
+  const [play, setPlay] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [randomColor, setRandomColor] = useState(new THREE.Color(0xffffff));
+
   const meshPortalMaterialRef = useRef();
   const gregModelMeshRef = useRef();
   const meshGolfBall = useRef();
   const meshD20 = useRef();
   const meshFloorRef = useRef();
   const meshCloseRef = useRef();
+  const meshMusicRef = useRef();
 
   // MODELS
   const d20SVG = useGLTF("./model/D20SVG2.glb");
   console.log(d20SVG.scene);
 
   const writersDeskModel = useGLTF("./model/writers_desk-transformed.glb");
-  const droneModel = useGLTF("./model/drone2-transformed.glb");
+  // const droneModel = useGLTF("./model/drone2-transformed.glb");
   const guitarModel = useGLTF("./model/guitar3-transformed.glb");
   const campfireModel = useGLTF("./model/campfire1-transformed.glb");
   const artStandModel = useGLTF("./model/artstand-transformed.glb");
@@ -88,6 +94,11 @@ const HobbyPortal = ({ scale = 10 }) => {
       mesh.material.roughness = 1; // Default roughness
       mesh.material.needsUpdate = true; // Ensure the material updates
     }
+  };
+
+  const handleMouseClickMusic = () => {
+    console.log("Clicked on music");
+    setPlay(!play);
   };
 
   const clickHandler = () => {
@@ -259,7 +270,7 @@ const HobbyPortal = ({ scale = 10 }) => {
             bevelSegments={20}
             visible={isHobbyActive}
           >
-            <meshStandardMaterial attach="material" color="purple" />
+            <meshStandardMaterial attach="material" color="white" />
             TTRPGs
           </Text3D>
 
@@ -326,13 +337,6 @@ const HobbyPortal = ({ scale = 10 }) => {
               <meshStandardMaterial attach="material" color="#505E69" />
               ELECTRONICS
             </Text3D>
-            {/* <primitive
-              object={droneModel.scene}
-              scale={isHobbyActive ? 8 : 2.5}
-              position={[0, 10, 0]}
-              rotation={[0, rotationYAngleToYaw(30), 0]}
-              visible={isHobbyActive}
-            /> */}
           </group>
 
           <group rotation={[0, -Math.PI / 3, 0]} position={[-3, 0, 5.3]}>
@@ -351,12 +355,67 @@ const HobbyPortal = ({ scale = 10 }) => {
               <meshStandardMaterial attach="material" color="brown" />
               MUSIC
             </Text3D>
+            <Text3D
+              font="./font/Lexend.json"
+              position={[-9, 4, 10]}
+              rotation={[0, (Math.PI * 2) / 4, 0]}
+              height={0.1}
+              size={0.3}
+              bevelEnabled
+              bevelSegments={3}
+              visible={isHobbyActive}
+            >
+              <meshStandardMaterial attach="material" color="brown" />
+              CLICK GUITAR TO PLAY
+            </Text3D>
             <primitive
+              onClick={() => handleMouseClickMusic()}
+              ref={meshMusicRef}
               object={guitarModel.scene}
               scale={10}
               position={[-10, 0, 3]}
               rotation={[0, rotationYAngleToYaw(90), 0]}
+              onPointerOver={(e) => {
+                setIsHovered(true);
+
+                // Generate a new random color
+                const newColor = new THREE.Color(
+                  Math.random(),
+                  Math.random(),
+                  Math.random()
+                );
+                setRandomColor(newColor);
+
+                // Apply material changes
+                if (e.object.material) {
+                  e.object.material.metalness = 0.9;
+                  e.object.material.roughness = 0.5;
+                  e.object.material.emissive = newColor;
+                  e.object.material.emissiveIntensity = 0.8;
+                }
+              }}
+              onPointerOut={(e) => {
+                setIsHovered(false);
+
+                // Reset material changes
+                if (e.object.material) {
+                  e.object.material.metalness = 0;
+                  e.object.material.roughness = 1;
+                  e.object.material.emissive = new THREE.Color(0x000000);
+                  e.object.material.emissiveIntensity = 0;
+                }
+              }}
             />
+            {play && (
+              <PositionalAudio
+                url="./sound/HeartwarmingSkeletons-Fly.mp3"
+                distance={2000}
+                loop
+                volume={1}
+                autoplay
+                position={[-155, 40, -90]}
+              />
+            )}
           </group>
 
           <group
