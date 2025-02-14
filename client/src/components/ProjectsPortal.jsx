@@ -319,7 +319,7 @@ const ProjectsPortal = ({ scale = 10 }) => {
               rotation={[0, Math.PI / 2, 0]}
               visible={isProjectActive}
               onClick={() =>
-                linkClickHandler("https://github.com/OccultParrot/Tomogatch.ai")
+                linkClickHandler("https://catgpt-1-il6e.onrender.com/")
               }
               onPointerOver={(e) => handleMouseOver(e.object)}
               onPointerOut={(e) => handleMouseOut(e.object)}
