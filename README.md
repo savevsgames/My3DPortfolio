@@ -58,7 +58,7 @@ To install and run this project locally:
 
 To view the project:
 
-- Visit the deployed site: [React Portfolio on Netlify](https://quiet-hotteok-ca264a.netlify.app/)
+- Visit the deployed site: [React Portfolio - Deployed on Render](https://my3dportfolio-iqxj.onrender.com/)
 
 To contribute:
 
