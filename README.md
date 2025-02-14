@@ -93,6 +93,7 @@ If you have any questions or need further support, feel free to contact me:
 
 - GitHub: [savevsgames](https://github.com/savevsgames)
 - Email: [gregcbarker@gmail.com](mailto:gregcbarker@gmail.com)
+- LinkedIn: [Connect with Me](https://www.linkedin.com/in/greg-barker-savevsgames/)
 
 For issues or feature requests, please create an issue in the repository.
 
