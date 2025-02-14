@@ -23,7 +23,7 @@
 
 The **React Portfolio** is a personal portfolio website designed to showcase my web development projects and skills. Built with **React** and deployed using **Render**, this application allows employers and collaborators to view my work, contact me, and download my resume. 
 
-[Deployed Project](https://quiet-hotteok-ca264a.netlify.app/)
+[Deployed Project](https://my3dportfolio-iqxj.onrender.com/)
 
 ![React Portfolio Screenshot](./screenshot.png)
 
