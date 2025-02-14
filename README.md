@@ -25,7 +25,7 @@ The **React Portfolio** is a personal portfolio website designed to showcase my 
 
 [Deployed Project](https://my3dportfolio-iqxj.onrender.com/)
 
-![React Portfolio Screenshot](./screenshot.png)
+![React Portfolio Screenshot](./PORTAL-folio.png)
 
 ## Installation Instructions
 
