@@ -1,19 +1,38 @@
+import { motion } from "motion/react";
 import Skill from "./Skill";
 import { skills } from "../assets/data";
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5, // time
+      when: "beforeChildren"
+    },
+  },
+};
+
 const Skills = () => {
   return (
-    <section className="bg-sky-100">
-      <h2 className="text-3xl alignment-class text-sky-950 py-4 font-bold tracking-widest">
-        My Development Toolkit
-      </h2>
+    <section className="bg-sky-100" > 
 
-      <div className="alignment-class bg-sky-100 py-4">
+      {/* Parent motion container */}
+      <motion.div
+        className="alignment-class bg-sky-100 py-4"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"        
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {skills.map((skill) => {
           return <Skill key={skill.id} {...skill} />;
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };
+
 export default Skills;
