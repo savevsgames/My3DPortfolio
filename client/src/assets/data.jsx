@@ -1,10 +1,46 @@
-import { FaJsSquare, FaReact, FaNodeJs, FaDatabase, FaBrain, FaLock, FaGithub, FaSyncAlt, FaMicrophone, FaCube, FaProjectDiagram, FaCogs } from 'react-icons/fa';
-import { FaHtml5, FaCss3Alt, FaLinkedin, FaInstagramSquare } from 'react-icons/fa';
+import {
+  FaJsSquare,
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaBrain,
+  FaLock,
+  FaGithub,
+  FaSyncAlt,
+  FaMicrophone,
+  FaCube,
+  FaProjectDiagram,
+  FaCogs,
+} from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaLinkedin,
+  FaInstagramSquare,
+} from "react-icons/fa";
 import { FaAws } from "react-icons/fa6";
-import { SiTypescript, SiRedux, SiPostgresql, SiSequelize, SiMongodb, SiGraphql, SiDocker, SiMicrosoftazure, SiGithubactions, SiCypress, SiSocketdotio, SiRedis, SiDart, SiShopify, SiAdobe, SiObsstudio, SiBlender, SiThreedotjs } from 'react-icons/si';
-import { MdApi } from 'react-icons/md';
-import { TbDroplet, TbLayout } from 'react-icons/tb';
-
+import {
+  SiTypescript,
+  SiRedux,
+  SiPostgresql,
+  SiSequelize,
+  SiMongodb,
+  SiGraphql,
+  SiDocker,
+  SiMicrosoftazure,
+  SiGithubactions,
+  SiCypress,
+  SiSocketdotio,
+  SiRedis,
+  SiDart,
+  SiShopify,
+  SiAdobe,
+  SiObsstudio,
+  SiBlender,
+  SiThreedotjs,
+} from "react-icons/si";
+import { MdApi } from "react-icons/md";
+import { TbDroplet, TbLayout } from "react-icons/tb";
 
 export const hero = {
   img: "/images/gregwebavatar_angled.png",
@@ -13,7 +49,6 @@ export const hero = {
 export const defaultImg = {
   img: "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 };
-
 
 export const skills = [
   {
@@ -299,40 +334,40 @@ export const skills = [
   },
 ];
 
-
 export const projects = [
   {
     id: 1,
-    img: "/images/rpg2-screenshot.png",
-    url: "https://savevsgames.itch.io/js-rpg2", 
-    github: "https://github.com/savevsgames/js_rpg2",
-    title: "JavaScript RPG V2",
-    text: "JS_RPG2 is an ongoing passion project built with TypeScript, Phaser, and Ink.js. I'm adapting my novel, 'Shadowtide Island,' into a browser-based game that’s also playable on mobile. It merges my love of TTRPGs with coding to create an immersive storytelling experience.",
+    img: "/image/FWOB.png",
+    url: "https://friends-without-benefits.onrender.com/",
+    github: "https://github.com/savevsgames/friends-without-benefits",
+    title: "Friends Without Benefits",
+    text: "FRIENDS WITHOUT BENEFITS is a multiplayer scavenger hunt game where you use your webcam to find common objects, score points, and climb the leaderboard. We trained our own custom TensorFlow model to recognize objects in real‐time. Now you can play against friends, share video feeds, chat, and see who can spot items fastest!",
   },
   {
     id: 2,
-    img: "/images/readmegenerator-screenshot.png", 
+    img: "/image/CATGPT.png",
+    url: "https://catgpt-1-il6e.onrender.com/",
+    github: "https://github.com/savevsgames/catGPT",
+    title: "CAT-GPT (Tomogatch.ai)",
+    text: "CAT-GPT is a playful virtual pet application built with React on the client side and Node.js + Express on the server. It uses GPT-based AI for real-time chat interactions, allowing the pet to evolve based on user behavior. A document database stores conversation summaries for the OpenAI API, while a SQL database handles user accounts, yarn currency, and transactions. Yarn can be spent feeding and playing with the pet, adding a fun, gamified layer. Designed for scalability and ongoing updates, CAT-GPT grows with user feedback.",
+  },
+  {
+    id: 3,
+    img: "/images/rpg2-screenshot.png",
+    url: "https://savevsgames.itch.io/js-rpg2",
+    github: "https://github.com/savevsgames/js_rpg2",
+    title: "Shadowtide Island",
+    text: "Shadowtide Island (JS_RPG2) is an ongoing passion project built with TypeScript, Phaser, and Ink.js. I'm adapting my novel, 'Shadowtide Island,' into a browser-based game that’s also playable on mobile. It merges my love of TTRPGs with coding to create an immersive storytelling experience.",
+  },
+  {
+    id: 4,
+    img: "/images/readmegenerator-screenshot.png",
     url: "https://github.com/savevsgames/GitHub-README-Generator",
     github: "https://github.com/savevsgames/GitHub-README-Generator",
     title: "GitHub README Generator",
     text: "A Node.js CLI tool that dynamically generates a polished README.md based on user prompts. It streamlines project documentation by handling badges, descriptions, and more, with plans to integrate GPT for improved writing assistance.",
   },
-  {
-    id: 3,
-    img: "/image/FWOB.png", 
-    url: "https://friends-without-benefits.onrender.com/", 
-    github: "https://github.com/savevsgames/friends-without-benefits",
-    title: "friends-without-benefits",
-    text: "FRIENDS WITHOUT BENEFITS is a multiplayer scavenger hunt game where you use your webcam to find common objects, score points, and climb the leaderboard. We trained our own custom TensorFlow model to recognize objects in real‐time. Now you can play against friends, share video feeds, chat, and see who can spot items fastest!",
-  },
-  {
-    id: 4,
-    img: "/image/CATGPT.png", 
-    url: "", // TODO: Add render live demo link and change URL of github when swapped to render paid
-    github: "https://github.com/OccultParrot/Tomogatch.ai",
-    title: "Tomogatch.ai (CAT-GPT)",
-    text: "CAT-GPT is a playful virtual pet application built with React on the client side and Node.js + Express on the server. It uses GPT-based AI for real-time chat interactions, allowing the pet to evolve based on user behavior. A document database stores conversation summaries for the OpenAI API, while a SQL database handles user accounts, yarn currency, and transactions. Yarn can be spent feeding and playing with the pet, adding a fun, gamified layer. Designed for scalability and ongoing updates, CAT-GPT grows with user feedback.",
-  },
+
   {
     id: 5,
     img: "/images/multisearchdashboard-screenshot.png",

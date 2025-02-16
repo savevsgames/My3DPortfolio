@@ -11,9 +11,7 @@ const Downloadable = () => {
 
   return (
     <div className="alignment-class h-100 flex flex-col bg-sky-100">
-      <h1 className="text-4xl font-bold tracking-widest mr-auto text-sky-950">
-        Resume
-      </h1>
+      
       <section className="border-2 border-slate-500 p-4 rounded-xl w-full bg-white shadow-xl hover:bg-slate-200 flex flex-row justify-between items-center">
         <h3 className="text-2xl font-bold tracking-wide p-4">
           Download Resume
