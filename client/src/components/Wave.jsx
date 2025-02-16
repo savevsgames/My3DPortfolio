@@ -27,7 +27,7 @@ const Wave = () => {
   }, []);
 
   return (
-    <svg className="wave-top" width="100%" viewBox="0 0 1200 250" style={{ position: "absolute", top: "0px", left: "0px", zIndex: "2" }}>
+    <svg className="wave-top" width="100%" viewBox="0 0 1200 250" style={{ position: "absolute", top: "5px", left: "0px", zIndex: "2" }}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
