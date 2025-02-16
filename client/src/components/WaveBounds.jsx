@@ -7,17 +7,19 @@ const WaveBounds = () => {
     <div style={{ position: "relative", top: "0px", left: "0px" }}>
       <Wave />
       <div
+        className="sm:text-md md:text-lg lg:text-xl xl:text-2xl font-bold text-center sm:h-60 md:h-48 lg:h-36 xl:h-36"
         style={{
           position: "relative",
           left: "50%",
           transform: "translateX(-50%)",
           top: "20px",
           width: "70%",
-          height: "150px",
           zIndex: 3,
-          color: "#FFFFFF",
-          fontSize: "2rem",
-          marginBottom: "20px",
+          margin: "20px",
+          backgroundColor: "rgba(255, 255, 255, 0.7)",
+          padding: "20px",
+          borderRadius: "1rem",
+          color: "#082F49",
         }}
       >
         <Typewriter

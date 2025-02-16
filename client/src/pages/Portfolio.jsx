@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 const Portfolio = () => {
   return (
     <section className="bg-sky-100 flex flex-col">
-      <div
+      <div className="sm:text-md md:text-lg lg:text-xl xl:text-2xl "
         style={{
           display: "flex",
           justifyContent: "center",
@@ -14,12 +14,14 @@ const Portfolio = () => {
           width: "70%",
           height: "150px",
           zIndex: 3,
-          color: "#082F49",
-          fontSize: "2rem",
-          marginBottom: "20px",
-          marginTop: "20px",
+          marginBottom: "10px",
+          marginTop: "10px",
           marginLeft: "auto",
           marginRight: "auto",
+          backgroundColor: "rgba(255, 255, 255, 0.7)",
+          padding: "10px",
+          borderRadius: "1rem",
+          color: "#082F49",
         }}
       >
         <Typewriter
